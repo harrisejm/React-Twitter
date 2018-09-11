@@ -1,29 +1,28 @@
-import React from 'react'
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
+import React from 'react';
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing.unit * 2,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-});
+let boxes = {
+  paddingLeft: '20px',
+  paddingRight: '20px',
+  color: 'green'
+};
 
-function TheDeets(props){
-  const { classes } = props;
+function TheDeets(){
+
   return(
-    <div className={classes.root}>
-      <Grid container spacing={12}>
-        <Grid item xs={3}>
-          <Paper className={classses.paper}>Spaghetti</Paper>
-        </Grid>
-      </Grid>
+    <div>
+      <tr>
+        <td style={boxes}>
+          <p>replies</p>
+        </td>
+        <td style={boxes}>
+          <p>likes</p>
+        </td>
+        <td style={boxes}>
+          <p>retweets</p>
+        </td>
+
+      </tr>
+
     </div>
   );
 }

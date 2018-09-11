@@ -1,37 +1,38 @@
 import React from 'react';
-import TheDeets from './TheDeets'
+import TheDeets from './TheDeets';
+import AddTweet from './AddTweet';
+import PropTypes from 'prop-types';
+import Tweet from './Tweet';
+import { Link } from 'react-router-dom';
 
-let mainFeed = {
-  border: "solid",
-  height: "400px",
-  width: "300px",
-  marginTop: "40px",
-  marginLeft: "auto",
-  marginRight: "auto"
-}
-let bio = {
-  borderBottom: "solid",
-  paddingLeft: "10px"
-}
 
-function Feed(){
+
+
+function Feed(props){
   return(
     <div>
-      <div style={mainFeed}>
-        <div style={bio}>
-         <h4>Eddie Harris</h4>
-        </div>
+      <div>
+        <Link to="/newtweet">Post Tweet</Link>
       </div>
-      <div style={mainFeed}>
-        <div style={bio}>
-         <h4>James the TWEET Hanley</h4>
-        </div>
-        <TheDeets />
-      </div>
+
+      {props.feed.map((post, index) =>
+        <Tweet handle={post.handle}
+          tweet={post.tweet}
+          key={index}/>
+      )}
+
+
+
+      <TheDeets />
+
+
     </div>
 
-
-  )
-
+  );
 }
+
+Feed.propTypes = {
+  feed: PropTypes.array
+};
+
 export default Feed;
