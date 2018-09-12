@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import TheDeets from './TheDeets';
 
 let mainFeed = {
   background: 'white',
@@ -30,10 +31,9 @@ function Tweet(props){
 
         <div style={handle}>
           <div style={bodyTweet}>
-            <h4>Twitter @EddieHarris</h4>
-            <p>{props.handle}</p>
+            <h4>Twitter @{props.handle}</h4>
             <p>{props.tweet}</p>
-
+            <TheDeets></TheDeets>
           </div>
 
         </div>

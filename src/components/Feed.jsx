@@ -9,21 +9,26 @@ import { Link } from 'react-router-dom';
 
 
 function Feed(props){
+  function SetDeets(){
+    return <TheDeets />;
+  }
   return(
     <div>
       <div>
         <Link to="/newtweet">Post Tweet</Link>
       </div>
-
       {props.feed.map((post, index) =>
-        <Tweet handle={post.handle}
-          tweet={post.tweet}
-          key={index}/>
+        <div>
+          <Tweet handle={post.handle}
+            tweet={post.tweet}
+            key={index}/>
+          <TheDeets key/>
+        </div>
       )}
 
 
 
-      <TheDeets />
+
 
 
     </div>

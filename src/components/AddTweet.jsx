@@ -1,13 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { WithRouter, Redirect } from 'react-router-dom';
 
 function AddTweet(props){
+
   let _handle = null;
   let _tweet = null;
+  function coolRedirectTest(event){
+    event.preventDefault();
+    return <Redirect to='/'/>;
+  }
 
   function newTweetFormSubmission(event){
     event.preventDefault();
-
+    if(_handle.value === null || _handle.value === ""){
+      _handle.value = 'SwaggiboiEddie';
+    }
     props.onNewTweetCreation({handle: _handle.value, tweet: _tweet.value});
 
     _handle.value = '';
@@ -16,6 +24,7 @@ function AddTweet(props){
 
   return (
     <div>
+
       <form onSubmit={newTweetFormSubmission}>
         <input
           type="text"

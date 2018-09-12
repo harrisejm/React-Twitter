@@ -3,7 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 import Header from './Header';
 import Banner from './Banner';
 import Feed from './Feed';
-import NewTweetControl from './NewTweetControl';
+import AddTweet from './AddTweet';
+import history from './history';
 //import PropTypes from 'prop-types';
 
 let background = {
@@ -37,7 +38,7 @@ class App extends React.Component {
         <Banner />
         <Switch>
           <Route exact path='/' render={()=><Feed feed={this.state.masterTwitterList} />} />
-          <Route path='/newtweet' render={()=><NewTweetControl onNewTweetCreation={this.handleAddingNewTheTwitter} />} />
+          <Route path='/newtweet' render={()=><AddTweet onNewTweetCreation={this.handleAddingNewTheTwitter} />} />
         </Switch>
       </div>
     );
