@@ -7,23 +7,23 @@ import { Link } from 'react-router-dom';
 
 
 
-
 function Feed(props){
   return(
     <div>
       <div>
         <Link to="/newtweet">Post Tweet</Link>
       </div>
-
       {props.feed.map((post, index) =>
-        <Tweet handle={post.handle}
-          tweet={post.tweet}
-          key={index}/>
+        <div>
+          <Tweet handle={post.handle}
+            tweet={post.tweet}
+            key={index}/>
+        </div>
       )}
 
 
 
-      <TheDeets />
+
 
 
     </div>
