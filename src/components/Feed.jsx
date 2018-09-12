@@ -7,11 +7,7 @@ import { Link } from 'react-router-dom';
 
 
 
-
 function Feed(props){
-  function SetDeets(){
-    return <TheDeets />;
-  }
   return(
     <div>
       <div>
@@ -22,7 +18,6 @@ function Feed(props){
           <Tweet handle={post.handle}
             tweet={post.tweet}
             key={index}/>
-          <TheDeets key/>
         </div>
       )}
 

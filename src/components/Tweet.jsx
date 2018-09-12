@@ -33,7 +33,6 @@ function Tweet(props){
           <div style={bodyTweet}>
             <h4>Twitter @{props.handle}</h4>
             <p>{props.tweet}</p>
-            <TheDeets></TheDeets>
           </div>
 
         </div>
